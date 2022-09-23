@@ -23,6 +23,11 @@ export let flags = {
     WonAgainsGiant: false,
     LoseAgainstGiant: false,
 };
+export let items = {
+    Item1: "Health Potion",
+    Item2: "Empower Potion",
+    Item3: "Regeneration Potion",
+};
 export let sword = {
     Name: 'Sword',
     HP: 0,
@@ -55,6 +60,7 @@ nameBox.value = user.Name;
 export function saveJSON() {
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("flags", JSON.stringify(flags));
+    localStorage.setItem("items", JSON.stringify(items));
     localStorage.setItem("sword", JSON.stringify(sword));
     localStorage.setItem("armor", JSON.stringify(armor));
     localStorage.setItem("helmet", JSON.stringify(helmet));
@@ -69,6 +75,7 @@ export function loadJSON() {
     else {
         user = JSON.parse(localStorage.getItem("user"));
         flags = JSON.parse(localStorage.getItem("flags"));
+        items = JSON.parse(localStorage.getItem("items"));
         sword = JSON.parse(localStorage.getItem("sword"));
         armor = JSON.parse(localStorage.getItem("armor"));
         helmet = JSON.parse(localStorage.getItem("helmet"));
