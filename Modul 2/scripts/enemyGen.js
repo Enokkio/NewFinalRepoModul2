@@ -90,25 +90,25 @@ export function createEnemy() {
         else if (flags.stageNr <= 10) {
             var enemyInd = genrateRandomNumber(0, 2);
             enemy.Name = CaveMobs[enemyInd];
-            //add sprite here
+            enemy.Sprite = ForestMobSprites[enemyInd];
             return localenemycreate();
         }
         else if (flags.stageNr <= 15) {
             var enemyInd = genrateRandomNumber(0, 2);
             enemy.Name = InnerCaveMobs[enemyInd];
-            //add sprite here
+            enemy.Sprite = ForestMobSprites[enemyInd];
             return localenemycreate();
         }
         else if (flags.stageNr <= 20) {
             var enemyInd = genrateRandomNumber(0, 2);
             enemy.Name = DungeonMobs[enemyInd];
-            //add sprite here
+            enemy.Sprite = ForestMobSprites[enemyInd];
             return localenemycreate();
         }
         else if (flags.stageNr <= 25) {
             var enemyInd = genrateRandomNumber(0, 2);
             enemy.Name = FinalDungeonMobs[enemyInd];
-            //add sprite here
+            enemy.Sprite = ForestMobSprites[enemyInd];
             return localenemycreate();
         }
         //console.log("Creating enemy!");
