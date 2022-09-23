@@ -76,6 +76,8 @@ function overlapDetectself() {
         }
     }
 }
+//import flags to check for story spawning
+import { flags } from "./updateStats.js";
 //defining canvas in script to draw images on it as maps
 //---------------------------Define music
 let defaultAudio = document.getElementById("audio1");
@@ -98,9 +100,32 @@ export function pauseBatAudio() {
     battleAudio.pause();
     console.log("U SING ME");
 }
+function loadMapOnWindowLoad() {
+    if (flags.stageNr >= 0 && flags.stageNr <= 5) { //check for what stage
+        loadMapsStage1(); //loadar en exported function från map.js vilket editas med map.ts    
+        flags.stageNr++;
+    }
+    else if (flags.stageNr >= 6 && flags.stageNr < 10) {
+        loadMapsStage2();
+        console.log("Cave");
+    }
+    else if (flags.stageNr >= 10 && flags.stageNr < 15) {
+        loadMapsStage3();
+    }
+    else if (flags.stageNr >= 15 && flags.stageNr < 20) {
+        loadMapsStage4();
+    }
+    else if (flags.stageNr >= 20 && flags.stageNr <= 25) {
+        loadMapsStage5();
+    }
+}
 window.onload = function () {
-    playDefAudio();
-    PlayerStage.style.backgroundImage = "url('images/forest.png')";
+    if (flags.stageNr >= 2) {
+        loadMapOnWindowLoad();
+    }
+    else {
+        PlayerStage.style.backgroundImage = "url('images/forest.png')";
+    }
 };
 //function to load eventboxes
 function loadboxes() {
