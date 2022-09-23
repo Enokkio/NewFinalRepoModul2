@@ -30,8 +30,14 @@ class Enemy
   //Forest enemies
 
   export var enemy = new Enemy("","", 0, 0, 0, 0, 0, 0, 0);
-  let ForestMobs: string[] = ["wolf", "forestGuy", "spider" ];
-  let MobSprites: string[] = ["/images/mike.png", "/images/mike.png", "/images/mike.png"];
+  let ForestMobs: string[] = ["wolf", "forest Guy", "spider" ];
+  let ForestMobSprites: string[] = ["/images/mike.png", "/images/mike.png", "/images/mike.png"];
+  let CaveMobs: string[] = ["Black slime", "skeleton", "Rock golem"  ];
+  let InnerCaveMobs: string[] = ["Rock elemental", "Ancient skeleton", "Draugr" ];
+  let DungeonMobs: string[]=["Ghoul","Orc", "Dark Elf"]
+  let FinalDungeonMobs: string[] = ["Wyvern", "Vampie", "Liches", ];
+
+
 
 
 function genrateRandomNumber(min, max)
@@ -52,7 +58,8 @@ export function createEnemy()
 {
 
 
-if (flags.stageNr == 6) {
+
+if (flags.stageNr == 5) {
         enemy.Name = "Forest Lord";
         enemy.MHP = Math.ceil(1.5* user.MHP);
         enemy.CHP = Math.ceil(enemy.MHP);
@@ -103,13 +110,52 @@ else if(flags.stageNr == 26) {
 }
 else{
 
+    if ( flags.stageNr <= 5) {
+        var enemyInd = genrateRandomNumber(0,2);
+        enemy.Name = ForestMobs[enemyInd];
+        enemy.Sprite = ForestMobSprites[enemyInd];
+        return localenemycreate();
+    }
+    else if (flags.stageNr <= 10){
+        var enemyInd = genrateRandomNumber(0,2);
+        enemy.Name = CaveMobs[enemyInd];
+        //add sprite here
+        return localenemycreate();
+    }
+    else if (flags.stageNr <= 15){
+        var enemyInd = genrateRandomNumber(0,2);
+        enemy.Name = InnerCaveMobs[enemyInd];
+        //add sprite here
+        return localenemycreate();
+    }
+    else if (flags.stageNr <= 20){
+        var enemyInd = genrateRandomNumber(0,2);
+        enemy.Name = DungeonMobs[enemyInd];
+        //add sprite here
+        return localenemycreate();
+    }
+    else if (flags.stageNr <= 25){
+        var enemyInd = genrateRandomNumber(0,2);
+        enemy.Name = FinalDungeonMobs[enemyInd];
+        //add sprite here
+        return localenemycreate();
+    }
     //console.log("Creating enemy!");
-    var enemyInd = genrateRandomNumber(0,2);
-    enemy.Name = ForestMobs[enemyInd];
-    enemy.Sprite = MobSprites[enemyInd];
+   
     
 
+   
+   
 
+
+}
+    
+    
+}
+
+
+
+function localenemycreate(){
     enemy.Level = genrateRandomNumber(flags.stageNr - 1, flags.stageNr + 1);
     if(enemy.Level < 1)
         enemy.Level = 1;
@@ -147,10 +193,6 @@ else{
     enemy.CHP = enemy.MHP;
     return enemy;
 
-
-}
-    
-    
 }
 console.log(enemy.Sprite);
     console.log("test");
