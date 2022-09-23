@@ -30,10 +30,14 @@ body{
     width: 700px;
     height: 500px;
     position: absolute;
-z-index: 2;
-    display: none;
+z-index: 100;
+display: none;
+
 }
 
+.hiddened{
+    display: none;
+}
 
 #enemy{
     position:absolute; 
@@ -55,7 +59,8 @@ z-index: 2;
 
 .buttonText{
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
+    padding-top: 15px;
     user-select: none;
 }
 
