@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/game-screen.css">
+    <link href="style/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/gen2Style.css">
+    <link rel="stylesheet" href="style/input.css">
+
+    <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-1.5.js"
+  > </script>
+</head>
+<body>
+  <button id="musicButton">Music</button>
+  <audio id="audio1"src="./scripts/Audio/defaultSound.mp3" ></audio>
+  <audio id="audio2"src="./scripts/Audio/battleSound.mp3" ></audio>
+    
+
+
+
+    <div id="canvas-wrap" class="top-[15%]">
+
+      <div id="wall" class="bg-green-900 w-[900px] h-[700px] absolute m-auto flex -z-10 right-[-100px] top-[-100px]" style="background-image: url(/images/forest_background.png);"></div>
+
+        <div id="player" style="left: 325px; top:400px;"></div>
+
+          
+           <div id="canvas">
+
+           </div>
+
+
+        
+<div class="storydiv" id="storydivs" >
+
+  <div class="storytext">
+    <p class="title story-content-text story-title-tag">I AM THE TITLE</p>
+    <p class="title story-content-text story-text-tag">I AM THE STORY</p>
+  </div>
+
+  <div class="storyoption">
+    <button id= "button1" class="buttons buttonYES">YES</button>
+    <button id= "button2" class="buttons buttonNO">NO</button>
+
+  </div>
+
+</div>
+
+
+        <div class="next-level collisionDetect selfdetection" id="rotating"></div>
+        <div id="story-event" class="story-event collisionDetect selfdetection"></div>
+        <div id="monster-event"   class="monster-event collisionDetect selfdetection"></div>
+       
+
+          <div id="window">
+
+          <div class="overflow-hidden bg-gray-500 border-8 border-gray-400  h-[165px] w-[700px]" style="text-align: center;">
+      
+      
+            <p id="turnCounter" class="turnCounter border-4"></p>
+            <div id="Cplayer" class=""></div>
+            <div id="enemy"   class=""></div>
+      
+          </div>
+      
+          <div class="block max-w-sm overflow-hidden bg-blue-400 border-4 playerBorder absolute w-[350px] h-[142px] top-[165px]">
+            <ul class="stat-display" >
+              <li class="stat playerBorder bg-blue-500" id="Name"></li>
+              <li class="stat playerBorder bg-blue-500" id="Level"></li>
+              <li class="stat playerBorder bg-blue-500" id="CHP">CHP</li>
+              <li class="stat playerBorder bg-blue-500" id="STR">STR</li>
+              <li class="stat playerBorder bg-blue-500" id="DEF">DEF</li>
+              <li class="stat playerBorder bg-blue-500" id="SPD">SPD</li>
+            </ul>
+          </div>
+      
+          <div class="block max-w-sm overflow-hidden bg-red-400 border-4 enemyBorder absolute w-[350px]  h-[142px] top-[165px] left-1/2">
+            <ul class="Estat-display">
+              <li class="stat enemyBorder bg-red-500" id="Name"></li>
+              <li class="stat enemyBorder bg-red-500" id="Level"></li>
+              <li class="stat enemyBorder bg-red-500" id="HP">HP: </li>
+              <li class="stat enemyBorder bg-red-500" id="STR">STR: </li>
+              <li class="stat enemyBorder bg-red-500" id="DEF">DEF: </li>
+              <li class="stat enemyBorder bg-red-500" id="SPD">SPD: </li>
+          </div>
+      
+          <div id="LogBox" class="block overflow-hidden bg-gray-500 border-8 border-gray-400 absolute top-[307px] h-[193px] w-[350px]">
+        
+          </div>
+      
+      
+          <div id="Actions" class="overflow-hidden bg-gray-500 border-8 border-gray-400 absolute top-[307px] h-[193px] w-[350px] left-1/2 flex justify-center">
+            <div class=" m-auto grid grid-cols-2 gap-2">
+      
+              <div id="Attack" class="block bg-damageYellow h-[75px] w-[150px] border-4 border-teal-500 hover:bg-yellow-400  relative">
+                <p class="buttonText">Attack</p>
+              </div>
+      
+              <div id="Heal" class="block bg-healthGreen  border-4 border-teal-500 h-[75px] w-[150px] hover:bg-green-500 relative">
+                <p class="buttonText">Heal</p>
+              </div>
+      
+              <div id="Block" class="block bg-blockBlue border-4 border-teal-500 h-[75px] w-[150px] hover:bg-blue-600 relative">
+                <p class="buttonText">Block</p>
+              </div>
+      
+              <div id="Items" class="block bg-itemsBrown border-4 border-teal-500 h-[75px] w-[150px] hover:bg-amber-400 relative">
+                <p class="buttonText">Items</p>
+              </div>
+      
+            </div>
+          </div>
+      
+          </div>
+
+          <!-- charachtor creator -->
+
+          <div id="characterCreator" class="grid place-items-center z-10">
+            <div class="bg-gray-400 border-8 border-gray-300 w-[25vw] absolute  h-[60vh] rounded" style="left: 175px">
+        
+              <div class=" absolute w-[100px] h-[100px] bg-black mt-[10px] border-4 rounded border-gray-500 ml-[10px]"></div>
+        
+              <p class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[20px] rounded w-fit mt-[25px] ml-[50%]">Name</p>
+              <input id="nameBox" type="text" class="mt-[10px] ml-[37%] w-[56%] border-4 border-gray-500  rounded bg-gray-300 select-text outline-none">
+        
+              <p id="ptsCounter" class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[20px] rounded w-fit mt-[60px] ml-[10px]">Points Available: 5</p>
+        
+              <p id="HPs" class="stat border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] rounded min-w-[91px] max-w-[100px] w-fit absolute mt-[10px] ml-[10px]">HP: 5 </p>
+              <p id="HealthAdd" class="stat add-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative top-[10px] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="HealthSub" class="stat remove-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative bottom-[22px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+        
+              <p id="STRs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px] ">STR: 1</p>
+              <p id="StrengthAdd" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative top-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="StrengthSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+        
+              <p id="DEFs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">DEF: 1</p>
+              <p id="DefenseAdd" class="add-stats-buttons stat rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="DefenseSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+              <p id="SPDs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">SPD: 1</p>
+              <p id="SpeedAdd" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="SpeedSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+              <p id="startBtn" class="stat rounded border-gray-500 border-4 pl-[20px] pr-[20px] w-fit absolute mt-[-63px] ml-[70%] bg-gray-300 hover:bg-gray-400"> Start</p>
+        
+        
+        
+            </div>
+          </div>
+
+          <!-- lvl Up -->
+
+          <div id="lvlUpScreen" class="hidden place-items-center z-10">
+            <div class="bg-gray-400 border-8 border-gray-300 w-[210px] absolute h-[335px] rounded left-[260px] ">
+        
+        
+              <p id="ptsCounter2" class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[17.5px] rounded w-fit mt-[10px] mx-[10px]">Points Available: 5</p>
+        
+              <p id="HPs2" class="stat border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[15px] rounded min-w-[91px] max-w-[100px] w-fit absolute mt-[10px] ml-[10px]">HP: 1 </p>
+              <p id="HealthAdd2" class="stat add-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative top-[10px] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="HealthSub2" class="stat remove-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative bottom-[22px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+        
+              <p id="STRs2" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[15px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">STR: 1</p>
+              <p id="StrengthAdd2" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative top-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="StrengthSub2" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+        
+              <p id="DEFs2" class="stat rounded border-gray-500 border-4 bg-slate-400  pl-[15px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">DEF: 1</p>
+              <p id="DefenseAdd2" class="add-stats-buttons stat rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="DefenseSub2" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+              <p id="SPDs2" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[15px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">SPD: 1</p>
+              <p id="SpeedAdd2" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
+              <p id="SpeedSub2" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+        
+              <p id="continueBtn" class="stat rounded border-gray-500 border-4 pl-[20px] pr-[20px] w-fit absolute mt-[-22px] ml-[20%] bg-gray-300 hover:bg-gray-400"> Continue</p>
+        
+            </div>
+        
+            </div>
+
+          <!-- death screen -->
+
+          <div id="deathScreen" class="z-10">
+              <div class="bg-gray-400 border-8 border-gray-300 w-[400px] absolute h-[400px] left-[150px] rounded text-center">
+          
+                <h1 class=" text-red-600 text-5xl mb-[80px] font-serif select-none">YOU DIED</h1>
+                <a id="restart"href="mainMeny.html" class=" text-2xl border-4 w-fit m-auto pl-[5px]  pr-[5px] hover:bg-gray-500 select-none">RESTART</a>
+              </div>
+          </div>
+
+          <!-- Gear screen -->
+          <div id="gearScreen" class="items-center justify-center text-center hidden absolute bg-gray-400 border-8 border-gray-300 w-[500px] left-[100px] top-[60px] h-[400px] rounded z-10">
+          
+            <div id="passBtn" class="bg-red-400 border-8 border-red-300 w-[100px] top-[200px] select-none absolute h-[50px] rounded hover:border-red-500"><p class="mt-[3px]">Pass</p></div>
+            <div id="takeBtn" class="bg-green-400 border-8 border-green-300 w-[100px] top-[100px] select-none absolute h-[50px] rounded hover:border-green-500 h"><p class="mt-[3px]">Take</p></div>
+        
+            <div id="yourItem"class="bg-red-400 border-8 border-gray-300 w-[150px] absolute right-[5%] top-[5%] h-[150px] rounded">
+              <div id="" class="block overflow-hidden bg-red-400 border-8  border-gray-300 rounded absolute w-[150px] h-[142px] top-[165px] -left-2">
+                <ul class="newItemStats" >
+                  <li class="" id="Name">Name</li>
+                  <li class="" id="HP">HP:</li>
+                  <li class="" id="STR">STR:</li>
+                  <li class="" id="DEF">DEF:</li>
+                  <li class="" id="SPD">SPD:</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="newItem" class="bg-blue-400 border-8 border-gray-300 w-[150px] absolute left-[5%] top-[5%] h-[150px] rounded">
+              <div id="" class="block overflow-hidden bg-blue-400 border-gray-300 border-8 rounded absolute w-[150px] h-[142px] top-[165px] -left-2">
+                <ul class="yourItemStats">
+                  <li class="" id="Name">Name</li>
+                  <li class="" id="HP">HP:</li>
+                  <li class="" id="STR">STR:</li>
+                  <li class="" id="DEF">DEF:</li>
+                  <li class="" id="SPD">SPD:</li>
+                </ul>
+              </div>
+            </div>
+
+        
+        
+          </div>
+
+
+    </div>
+
+
+
+
+
+    <script type="module" src="scripts/storiesloader.js"></script>
+
+    <script type="module" src="scripts/PlayerMovement.js"></script>
+
+    <script type="module" src="scripts/map.js"></script>
+    <script type="module" src="scripts/collision-detection.js"></script>
+    
+    <script type="module" src="scripts/characterCreator.js"></script>
+
+    <script type="module" src="scripts/PlayerCombat.js"></script>
+    <script type="module" src="scripts/updateStats.js"></script>
+    <script type="module" src="scripts/startCombat.js"></script>
+    <script type="module" src="scripts/lvlUp.js"></script>
+
+
+    <script type="module" src="scripts/itemGen.js"></script>
+  
+    
+
+</body>
+</html>

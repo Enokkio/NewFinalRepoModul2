@@ -1,0 +1,151 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+}
+#player{
+    background-image: url("/images/ww.png");    
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 50px;
+    z-index: 3;
+}
+
+#canvas{
+
+    width: inherit;
+    height: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: auto;
+    }
+
+    /* Box för att containa canvas */
+#canvas-wrap{
+
+        width: 700px;
+        height: 500px;
+        margin: auto;
+        position: relative;
+        display: flex;
+
+    
+    }
+
+.next-level{
+  background-image: url(/images/warpG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+    position:absolute; 
+    
+    display: flex;
+    visibility: visible;
+    left: 325px;
+    display: none;
+    
+
+}
+
+@-webkit-keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+#rotating {
+  -webkit-animation: rotating 6s linear infinite;
+}
+
+.monster-event{
+
+    background-image: url("/images/mike.png");    
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position:absolute; 
+    top: 200px;
+    display: flex;
+    visibility: visible;
+    left: 325px;
+    
+
+
+}
+
+.enemy{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.story-event{
+
+    background-color:green;
+    width: 50px;
+    height: 50px;
+    z-index: 0;
+    position:absolute; 
+    top: 200px;
+    display: flex;
+    display: none;
+    left: 200px;
+
+
+}
+
+
+    /*STORY BOX*/
+    .storydiv{
+      position: absolute;
+        width: 380px;
+        height: 340px;
+        background-color: lightblue;
+        margin: auto;
+        display: none;
+        padding: 20px;
+        z-index: 100;
+        user-select: none;
+
+      }
+      
+      .storytext{
+        height: 220px;
+      }
+      
+      .story-content-text{
+      
+        text-align: center;
+        margin-top: 50px;
+        white-space: pre-line;
+      
+      }
+      
+      
+      
+      /* CSS */
+      .storyoption{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .buttons {
+      
+       
+        width: 100px;
+        height: 20px;
+      
+        
+      
+      }
+      

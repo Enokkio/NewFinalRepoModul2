@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+}
+
+body{
+
+    }
+
+ @keyframes eddie { 
+    100% {
+        background-position: 2000px 0;
+    }
+} 
+
+
+/* main  */
+
+.bg{
+     height: 937px;  
+    background-image: url("/images/stars.png");
+    
+    animation: eddie 100s linear infinite;
+}
+
+#deathScreen{
+    display: none;
+
+}
+
+/* components */
+
+h1{
+   
+    -webkit-text-stroke: 1px black;
+}
+
+
+
+/* addons */
+
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
