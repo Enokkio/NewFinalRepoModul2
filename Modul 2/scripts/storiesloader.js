@@ -1,5 +1,5 @@
 //importing functions to save
-import { saveJSON } from "./updateStats.js";
+import { items, saveJSON } from "./updateStats.js";
 import { user } from './updateStats.js';
 import { flags } from './updateStats.js';
 //import colidor 
@@ -101,6 +101,176 @@ function loadcommonstory() {
                         endGame();
                     }
                 }
+            },
+            option2() {
+                updateData();
+            }
+        },
+        hpPotDrop: { title: "You've found a Health Potion!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                innterStoryText.innerHTML = `the apple was quite delicious \n Healed for ${x}`;
+                if (items.Item1 == null) {
+                    items.Item1 = "Health Potion";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Health Potion";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Health Potion";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        EmpPotion: { title: "You've found a Empower Potion!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Empower Potion";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Empower Potion";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Empower Potion";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        PowerScroll: { title: "You've found a Greater Strength Scroll!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                let z = Math.random() * 100;
+                if (items.Item1 == null) {
+                    items.Item1 = "Greater Strength Scroll";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Greater Strength Scroll";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Greater Strength Scroll";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        RegenPotion: { title: "You've found a Regeneration Potion!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Regeneration Potion";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Regeneration Potion";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Regeneration Potion";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        WeaknessPot: { title: "You've found a Potion of Weakness!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Potion of Weakness";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Potion of Weakness";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Potion of Weakness";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        Bomb: { title: "You've found a Bomb!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Bomb";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Bomb";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Bomb";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        ThrowingKnife: { title: "You've found a Throwing Knife!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Throwing Knife";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Throwing Knife";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Throwing Knife";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
+            },
+            option2() {
+                updateData();
+            }
+        },
+        FreeActionPotion: { title: "You've found a Double Action Potion!", storytext: `Do you want to take it? \n `,
+            option1() {
+                buttonDisplaChange();
+                if (items.Item1 == null) {
+                    items.Item1 = "Double Action Potion";
+                    innterStoryText.innerHTML = items.Item1 + ` was placed in slot 1!`;
+                }
+                else if (items.Item2 == null) {
+                    items.Item2 = "Double Action Potion";
+                    innterStoryText.innerHTML = items.Item2 + ` was placed in slot 2!`;
+                }
+                else if (items.Item3 == null) {
+                    items.Item3 = "Double Action Potion";
+                    innterStoryText.innerHTML = items.Item3 + ` was placed in slot 3!`;
+                }
+                setTimeout(updateData, 3000);
             },
             option2() {
                 updateData();

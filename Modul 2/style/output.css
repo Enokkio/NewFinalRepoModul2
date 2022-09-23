@@ -60,7 +60,8 @@ body{
 
 .buttonText{
   text-align: center;
-  font-size: 3vw;
+  font-size: 20px;
+  padding-top: 15px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -1025,6 +1026,10 @@ video {
   height: 300px;
 }
 
+.h-\[130px\]{
+  height: 130px;
+}
+
 .w-\[900px\]{
   width: 900px;
 }
@@ -1073,6 +1078,10 @@ video {
 
 .w-\[500px\]{
   width: 500px;
+}
+
+.w-\[130px\]{
+  width: 130px;
 }
 
 .min-w-\[91px\]{

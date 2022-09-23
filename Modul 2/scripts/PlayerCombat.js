@@ -11,6 +11,10 @@ function useItem(slot) {
     switch (slot) {
         case 1: {
             items.Item1 = null;
+            items.Item1 = items.Item2;
+            items.Item2 = null;
+            items.Item2 = items.Item3;
+            items.Item3 = null;
             itemsButton.style.display = "block";
             attackButton.style.display = "block";
             blockButton.style.display = "block";
@@ -18,10 +22,13 @@ function useItem(slot) {
             document.getElementById("iBox1").style.display = "none";
             document.getElementById("iBox2").style.display = "none";
             document.getElementById("iBox3").style.display = "none";
+            document.getElementById("iBack").style.display = "none";
             break;
         }
         case 2: {
             items.Item2 = null;
+            items.Item2 = items.Item3;
+            items.Item3 = null;
             itemsButton.style.display = "block";
             attackButton.style.display = "block";
             blockButton.style.display = "block";
@@ -29,6 +36,7 @@ function useItem(slot) {
             document.getElementById("iBox1").style.display = "none";
             document.getElementById("iBox2").style.display = "none";
             document.getElementById("iBox3").style.display = "none";
+            document.getElementById("iBack").style.display = "none";
             break;
         }
         case 3: {
@@ -40,6 +48,7 @@ function useItem(slot) {
             document.getElementById("iBox1").style.display = "none";
             document.getElementById("iBox2").style.display = "none";
             document.getElementById("iBox3").style.display = "none";
+            document.getElementById("iBack").style.display = "none";
             break;
         }
     }
@@ -57,12 +66,14 @@ function itemslot1() {
             var hpHealed = (user.MHP - user.CHP) * 0.7;
             user.CHP += hpHealed;
             logger("player", "Health Potion", hpHealed);
+            useItem(1);
             changeTurn();
             break;
         }
         case "Empower Potion": {
             emp = true;
             logger("player", "Empower Potion", 0);
+            useItem(1);
             changeTurn();
             break;
         }
@@ -72,6 +83,7 @@ function itemslot1() {
             user.STR += newSTR;
             STRTime = 3;
             logger("player", "Greater Strength Scroll", newSTR);
+            useItem(1);
             changeTurn();
             break;
         }
@@ -80,18 +92,22 @@ function itemslot1() {
             user.CHP += hpHealed;
             regTime = 2;
             logger("player", "Regeneration Potion", hpHealed);
+            useItem(1);
             changeTurn();
             break;
         }
         case "Potion of Weakness": {
             weaTime = 3;
             logger("player", "Potion of Weakness", 0);
+            useItem(1);
             changeTurn();
             break;
         }
         case "Bomb": {
             var dmg = Math.floor(enemy.MHP * 0.25);
             enemy.CHP -= dmg;
+            useItem(1);
+            updateStatsE();
             logger("player", "Bomb", dmg);
             changeTurn();
             break;
@@ -99,11 +115,150 @@ function itemslot1() {
         case "Throwing Knife": {
             var dmg = Math.floor(enemy.MHP * 0.10);
             enemy.CHP -= dmg;
+            useItem(1);
+            updateStatsE();
             logger("player", "Throwing Knife", dmg);
             break;
         }
         case "Double Action Potion": {
             twoTime = true;
+            useItem(1);
+            logger("player", "Double Action Potion", 0);
+            break;
+        }
+    }
+}
+function itemslot3() {
+    switch (items.Item3) {
+        case "Health Potion": {
+            var hpHealed = (user.MHP - user.CHP) * 0.7;
+            user.CHP += hpHealed;
+            logger("player", "Health Potion", hpHealed);
+            useItem(3);
+            changeTurn();
+            break;
+        }
+        case "Empower Potion": {
+            emp = true;
+            logger("player", "Empower Potion", 0);
+            useItem(3);
+            changeTurn();
+            break;
+        }
+        case "Greater Strength Scroll": {
+            ogSTR = user.STR;
+            var newSTR = Math.ceil(user.STR * 1.5);
+            user.STR += newSTR;
+            STRTime = 3;
+            logger("player", "Greater Strength Scroll", newSTR);
+            useItem(3);
+            changeTurn();
+            break;
+        }
+        case "Regeneration Potion": {
+            var hpHealed = Math.ceil(user.MHP * 0.1);
+            user.CHP += hpHealed;
+            regTime = 2;
+            logger("player", "Regeneration Potion", hpHealed);
+            useItem(3);
+            changeTurn();
+            break;
+        }
+        case "Potion of Weakness": {
+            weaTime = 3;
+            logger("player", "Potion of Weakness", 0);
+            useItem(3);
+            changeTurn();
+            break;
+        }
+        case "Bomb": {
+            var dmg = Math.floor(enemy.MHP * 0.25);
+            enemy.CHP -= dmg;
+            useItem(3);
+            updateStatsE();
+            logger("player", "Bomb", dmg);
+            changeTurn();
+            break;
+        }
+        case "Throwing Knife": {
+            var dmg = Math.floor(enemy.MHP * 0.10);
+            enemy.CHP -= dmg;
+            useItem(3);
+            updateStatsE();
+            logger("player", "Throwing Knife", dmg);
+            break;
+        }
+        case "Double Action Potion": {
+            twoTime = true;
+            useItem(3);
+            logger("player", "Double Action Potion", 0);
+            break;
+        }
+    }
+}
+function itemslot2() {
+    switch (items.Item2) {
+        case "Health Potion": {
+            var hpHealed = (user.MHP - user.CHP) * 0.7;
+            user.CHP += hpHealed;
+            logger("player", "Health Potion", hpHealed);
+            useItem(2);
+            changeTurn();
+            break;
+        }
+        case "Empower Potion": {
+            emp = true;
+            logger("player", "Empower Potion", 0);
+            useItem(2);
+            changeTurn();
+            break;
+        }
+        case "Greater Strength Scroll": {
+            ogSTR = user.STR;
+            var newSTR = Math.ceil(user.STR * 1.5);
+            user.STR += newSTR;
+            STRTime = 3;
+            logger("player", "Greater Strength Scroll", newSTR);
+            useItem(2);
+            changeTurn();
+            break;
+        }
+        case "Regeneration Potion": {
+            var hpHealed = Math.ceil(user.MHP * 0.1);
+            user.CHP += hpHealed;
+            regTime = 2;
+            logger("player", "Regeneration Potion", hpHealed);
+            useItem(2);
+            changeTurn();
+            break;
+        }
+        case "Potion of Weakness": {
+            weaTime = 3;
+            logger("player", "Potion of Weakness", 0);
+            useItem(2);
+            changeTurn();
+            break;
+        }
+        case "Bomb": {
+            var dmg = Math.floor(enemy.MHP * 0.25);
+            enemy.CHP -= dmg;
+            useItem(2);
+            updateStatsE();
+            logger("player", "Bomb", dmg);
+            changeTurn();
+            break;
+        }
+        case "Throwing Knife": {
+            var dmg = Math.floor(enemy.MHP * 0.10);
+            enemy.CHP -= dmg;
+            useItem(2);
+            updateStatsE();
+            logger("player", "Throwing Knife", dmg);
+            break;
+        }
+        case "Double Action Potion": {
+            twoTime = true;
+            useItem(2);
             logger("player", "Double Action Potion", 0);
             break;
         }
@@ -273,14 +428,14 @@ function logger(who, action, amount) {
         }
         case "Bomb": {
             el.innerHTML = '<span class="blueText">' + user.Name + '</span>' + 'used' +
-                '<span class="yellowText">Throwing Knife</span>' + 'used Bomb and dealth ' + '<span class="redText">' + amount + "</span> damage to ";
+                '<span class="yellowText">Bomb</span>' + 'and dealth ' + '<span class="redText">' + amount + "</span> damage to ";
             el.classList.remove('playerBorder');
             el.classList.add('enemyBorder');
             break;
         }
         case "Throwing Knife": {
             el.innerHTML = '<span class="blueText">' + user.Name + '</span>' + 'used' +
-                '<span class="yellowText">Throwing Knife</span>' + 'used Throwing Knife and dealth ' + '<span class="redText">' + amount + "</span> damage to " + enemy.Name;
+                '<span class="yellowText">Throwing Knife</span>' + ' and dealth ' + '<span class="redText">' + amount + "</span> damage to " + enemy.Name;
             el.classList.remove('playerBorder');
             el.classList.add('enemyBorder');
             break;
@@ -385,21 +540,27 @@ itemsButton.addEventListener('click', function handleClick() {
         }
         if (items.Item2 != null) {
             document.getElementById("iBox2").innerText = items.Item2;
-            document.getElementById("iBox1").classList.add('buttonText');
+            document.getElementById("iBox2").style.display = "block";
+            document.getElementById("iBox2").classList.add('buttonText');
         }
         if (items.Item3 != null) {
             document.getElementById("iBox3").innerText = items.Item3;
-            document.getElementById("iBox1").classList.add('buttonText');
+            document.getElementById("iBox3").style.display = "block";
+            document.getElementById("iBox3").classList.add('buttonText');
         }
         document.getElementById("iBack").style.display = "block";
     }
 });
 document.getElementById("iBack").addEventListener('click', function handleClick() {
     if (playerTurn == true) {
-        itemsButton.style.display = "none";
-        document.getElementById("iBox1").style.display = "inital";
-        document.getElementById("iBox2").style.display = "inital";
-        document.getElementById("iBox3").style.display = "inital";
+        itemsButton.style.display = "block";
+        attackButton.style.display = "block";
+        blockButton.style.display = "block";
+        healButton.style.display = "block";
+        document.getElementById("iBox1").style.display = "none";
+        document.getElementById("iBox2").style.display = "none";
+        document.getElementById("iBox3").style.display = "none";
+        document.getElementById("iBack").style.display = "none";
     }
 });
 document.getElementById("iBox1").addEventListener('click', function handleClick() {
@@ -409,18 +570,12 @@ document.getElementById("iBox1").addEventListener('click', function handleClick(
 });
 document.getElementById("iBox2").addEventListener('click', function handleClick() {
     if (playerTurn == true) {
-        itemsButton.style.display = "none";
-        document.getElementById("iBox1").style.display = "inital";
-        document.getElementById("iBox2").style.display = "inital";
-        document.getElementById("iBox3").style.display = "inital";
+        itemslot2();
     }
 });
 document.getElementById("iBox3").addEventListener('click', function handleClick() {
     if (playerTurn == true) {
-        itemsButton.style.display = "none";
-        document.getElementById("iBox1").style.display = "inital";
-        document.getElementById("iBox2").style.display = "inital";
-        document.getElementById("iBox3").style.display = "inital";
+        itemslot3();
     }
 });
 function randomIntFromInterval(min, max) {

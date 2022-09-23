@@ -28,9 +28,9 @@ export let flags = {
 }
 
 export let items = {
-    Item1: "Health Potion",
-    Item2: "Empower Potion",
-    Item3: "Regeneration Potion",
+    Item1: null,
+    Item2: null,
+    Item3: null,
 }
 
 export let sword = { 
