@@ -35,17 +35,16 @@
            </div>
 
 
-        
-<div class="storydiv" id="storydivs" >
+<div class="storydiv bg-gray-400 border-8 border-gray-300 w-[400px] absolute h-[335px] rounded top-[75px] text-center left-[165px] z-10" id="storydivs" >
 
-  <div class="storytext">
-    <p class="title story-content-text story-title-tag">I AM THE TITLE</p>
-    <p class="title story-content-text story-text-tag">I AM THE STORY</p>
+  <div class="storytext select-none">
+    <p class="title story-content-text select-none story-title-tag bg-gray-400 border-8 rounded border-gray-300 w-fit m-auto mt-[10px] px-[10px]">I AM THE TITLE</p>
+    <p class="title story-content-text select-none story-text-tag w-fit m-auto mt-[10px]">I AM THE STORY</p>
   </div>
 
-  <div class="storyoption">
-    <button id= "button1" class="buttons buttonYES">YES</button>
-    <button id= "button2" class="buttons buttonNO">NO</button>
+  <div class="storyoption select-none">
+    <button id= "button1" class="buttons buttonYES bg-green-400 border-8 border-green-300 w-[100px] top-[82%] select-none absolute left-[90px] h-[50px] rounded hover:border-green-500">YES</button>
+    <button id= "button2" class="buttons buttonNO bg-red-400 border-8 border-red-300 w-[100px] top-[82%] select-none absolute left-[210px] h-[50px] rounded hover:border-red-500">NO</button>
 
   </div>
 
@@ -97,20 +96,36 @@
           <div id="Actions" class="overflow-hidden bg-gray-500 border-8 border-gray-400 absolute top-[307px] h-[193px] w-[350px] left-1/2 flex justify-center">
             <div class=" m-auto grid grid-cols-2 gap-2">
       
-              <div id="Attack" class="block bg-damageYellow h-[75px] w-[150px] border-4 border-teal-500 hover:bg-yellow-400  relative">
+              <div id="Attack" class="block bg-damageYellow  h-[75px] w-[150px] border-4 border-teal-500 hover:bg-yellow-400  relative">
                 <p class="buttonText">Attack</p>
               </div>
       
-              <div id="Heal" class="block bg-healthGreen  border-4 border-teal-500 h-[75px] w-[150px] hover:bg-green-500 relative">
+              <div id="Heal" class="block bg-healthGreen   border-4 border-teal-500 h-[75px] w-[150px] hover:bg-green-500 relative">
                 <p class="buttonText">Heal</p>
               </div>
       
-              <div id="Block" class="block bg-blockBlue border-4 border-teal-500 h-[75px] w-[150px] hover:bg-blue-600 relative">
+              <div id="Block" class="block bg-blockBlue   border-4 border-teal-500 h-[75px] w-[150px] hover:bg-blue-600 relative">
                 <p class="buttonText">Block</p>
               </div>
       
-              <div id="Items" class="block bg-itemsBrown border-4 border-teal-500 h-[75px] w-[150px] hover:bg-amber-400 relative">
+              <div id="Items" class="block bg-itemsBrown  border-4 border-teal-500 h-[75px] w-[150px] hover:bg-amber-400 relative">
                 <p class="buttonText">Items</p>
+              </div>
+
+              <div id="iBack" class="block bg-damageYellow text-center hiddened h-[75px] w-[150px] border-4 border-teal-500 hover:bg-yellow-400  relative">
+                <p class="buttonText">Cancel</p>
+              </div>
+      
+              <div id="iBox1" class="block bg-healthGreen text-center hiddened border-4 border-teal-500 h-[75px] w-[150px] hover:bg-green-500 relative">
+                <p class="buttonText">Item 1</p>
+              </div>
+      
+              <div id="iBox2" class="block bg-blockBlue  text-center hiddened border-4 border-teal-500 h-[75px] w-[150px] hover:bg-blue-600 relative">
+                <p class="buttonText">Item 2</p>
+              </div>
+      
+              <div id="iBox3" class="block bg-itemsBrown text- text-center hiddened border-4 border-teal-500 h-[75px] w-[150px] hover:bg-amber-400 relative">
+                <p class="buttonText">Item 3</p>
               </div>
       
             </div>
@@ -120,35 +135,33 @@
 
           <!-- charachtor creator -->
 
-          <div id="characterCreator" class="grid place-items-center z-10">
-            <div class="bg-gray-400 border-8 border-gray-300 w-[25vw] absolute  h-[60vh] rounded" style="left: 175px">
+          <div id="characterCreator" class="hidden place-items-center z-10">
+            <div class="bg-gray-400 border-8 border-gray-300 w-[200px] absolute h-[440px] rounded left-[280px]">
+                
+              <p class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[20px] rounded w-fit mt-[25px] ml-[28%]">Name</p>
+              <input id="nameBox" type="text" class="mt-[10px] ml-[10%] w-[80%] border-4 border-gray-500  rounded bg-gray-300 select-text outline-none">
         
-              <div class=" absolute w-[100px] h-[100px] bg-black mt-[10px] border-4 rounded border-gray-500 ml-[10px]"></div>
-        
-              <p class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[20px] rounded w-fit mt-[25px] ml-[50%]">Name</p>
-              <input id="nameBox" type="text" class="mt-[10px] ml-[37%] w-[56%] border-4 border-gray-500  rounded bg-gray-300 select-text outline-none">
-        
-              <p id="ptsCounter" class="stat border-gray-500 bg-slate-400 border-4 pl-[20px] pr-[20px] rounded w-fit mt-[60px] ml-[10px]">Points Available: 5</p>
+              <p id="ptsCounter" class="stat border-gray-500 bg-slate-400 border-4 px-[20px]  rounded w-fit mt-[20px] ml-[5px]">Points Available: 5</p>
         
               <p id="HPs" class="stat border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] rounded min-w-[91px] max-w-[100px] w-fit absolute mt-[10px] ml-[10px]">HP: 5 </p>
               <p id="HealthAdd" class="stat add-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative top-[10px] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
-              <p id="HealthSub" class="stat remove-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative bottom-[22px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+              <p id="HealthSub" class="stat remove-stats-buttons border-gray-500 border-4 bg-gray-300 w-[30px] rounded relative bottom-[22px] left-[145px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
         
         
               <p id="STRs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px] ">STR: 1</p>
               <p id="StrengthAdd" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative top-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
-              <p id="StrengthSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+              <p id="StrengthSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[145px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
         
         
               <p id="DEFs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">DEF: 1</p>
               <p id="DefenseAdd" class="add-stats-buttons stat rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
-              <p id="DefenseSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+              <p id="DefenseSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[145px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
         
               <p id="SPDs" class="stat rounded border-gray-500 border-4 bg-slate-400 pl-[20px] pr-[20px] min-w-[91px] max-w-[100px] w-fit absolute ml-[10px]">SPD: 1</p>
               <p id="SpeedAdd" class="stat add-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[0] left-[110px] pl-[3px] h-[32px] hover:bg-gray-400">＋</p>
-              <p id="SpeedSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[150px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
+              <p id="SpeedSub" class="stat remove-stats-buttons rounded border-gray-500 border-4 bg-gray-300 w-[30px] relative bottom-[32px] left-[145px] pl-[7px] h-[32px] hover:bg-gray-400">-</p>
         
-              <p id="startBtn" class="stat rounded border-gray-500 border-4 pl-[20px] pr-[20px] w-fit absolute mt-[-63px] ml-[70%] bg-gray-300 hover:bg-gray-400"> Start</p>
+              <p id="startBtn" class="stat rounded border-gray-500 border-4 pl-[20px] pr-[20px] w-fit absolute mt-[-23px] ml-[29%] bg-gray-300 hover:bg-gray-400"> Start</p>
         
         
         
@@ -201,7 +214,7 @@
           <div id="gearScreen" class="items-center justify-center text-center hidden absolute bg-gray-400 border-8 border-gray-300 w-[500px] left-[100px] top-[60px] h-[400px] rounded z-10">
           
             <div id="passBtn" class="bg-red-400 border-8 border-red-300 w-[100px] top-[200px] select-none absolute h-[50px] rounded hover:border-red-500"><p class="mt-[3px]">Pass</p></div>
-            <div id="takeBtn" class="bg-green-400 border-8 border-green-300 w-[100px] top-[100px] select-none absolute h-[50px] rounded hover:border-green-500 h"><p class="mt-[3px]">Take</p></div>
+            <div id="takeBtn" class="bg-green-400 border-8 border-green-300 w-[100px] top-[100px] select-none absolute h-[50px] rounded hover:border-green-500"><p class="mt-[3px]">Take</p></div>
         
             <div id="yourItem"class="bg-red-400 border-8 border-gray-300 w-[150px] absolute right-[5%] top-[5%] h-[150px] rounded">
               <div id="" class="block overflow-hidden bg-red-400 border-8  border-gray-300 rounded absolute w-[150px] h-[142px] top-[165px] -left-2">

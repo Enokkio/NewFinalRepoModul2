@@ -36,7 +36,6 @@ function genrateRandomNumber(min, max) {
 }
 import { flags } from './updateStats.js';
 export function createEnemy() {
-
     if (flags.stageNr == 5) {
         enemy.Name = "Forest Lord";
         enemy.MHP = Math.ceil(1.5 * user.MHP);
