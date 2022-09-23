@@ -268,8 +268,8 @@ export function loadMapsStage3(){//Exporteras så den kan användas i collission
   //And we need to use player data to see which stage to load, so for example if stage is   0<stage<5 we use a function between stages 1-5 through a function
   //satte in random number generation funktionen sådana att den skulle komma med i exporten
   
-          PlayerStage.style.backgroundImage = "url('images/mike.png')";
-          wall.style.backgroundImage = "url('images/ww.png')";
+          PlayerStage.style.backgroundImage = "url('images/innerCaveFiller.png')";
+          wall.style.backgroundImage = "url('images/innerCave_background.png')";
   
   
           
@@ -291,8 +291,8 @@ export function loadMapsStage3(){//Exporteras så den kan användas i collission
     //And we need to use player data to see which stage to load, so for example if stage is   0<stage<5 we use a function between stages 1-5 through a function
     //satte in random number generation funktionen sådana att den skulle komma med i exporten
     
-            PlayerStage.style.backgroundImage = "url('images/mike.png')";
-            wall.style.backgroundImage = "url('images/ww.png')";
+            PlayerStage.style.backgroundImage = "url('images/dungFiller.png')";
+            wall.style.backgroundImage = "url('images/dung_background.png')";
     
     
             
@@ -314,8 +314,8 @@ export function loadMapsStage3(){//Exporteras så den kan användas i collission
       //And we need to use player data to see which stage to load, so for example if stage is   0<stage<5 we use a function between stages 1-5 through a function
       //satte in random number generation funktionen sådana att den skulle komma med i exporten
       
-              PlayerStage.style.backgroundImage = "url('images/mike.png')";
-              wall.style.backgroundImage = "url('images/ww.png')";
+              PlayerStage.style.backgroundImage = "url('images/deeperDungFiller.png')";
+              wall.style.backgroundImage = "url('images/deeperDung_background.png')";
       
       
               
@@ -337,8 +337,8 @@ export function loadMapsStage3(){//Exporteras så den kan användas i collission
         //And we need to use player data to see which stage to load, so for example if stage is   0<stage<5 we use a function between stages 1-5 through a function
         //satte in random number generation funktionen sådana att den skulle komma med i exporten
         
-                PlayerStage.style.backgroundImage = "url('images/mike.png')";
-                wall.style.backgroundImage = "url('images/ww.png')";
+                PlayerStage.style.backgroundImage = "url('images/bossFiller.png')";
+                wall.style.backgroundImage = "url('images/boss_background.png')";
         
         
                 

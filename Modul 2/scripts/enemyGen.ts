@@ -52,7 +52,7 @@ export function createEnemy()
 {
 
 
-if (flags.stageNr == 5) {
+if (flags.stageNr == 6) {
         enemy.Name = "Forest Lord";
         enemy.MHP = Math.ceil(1.5* user.MHP);
         enemy.CHP = Math.ceil(enemy.MHP);
@@ -61,7 +61,7 @@ if (flags.stageNr == 5) {
 
         return enemy;
 }
-else if(flags.stageNr == 10) {
+else if(flags.stageNr == 11) {
     enemy.Name = "Naga";
     enemy.MHP = Math.ceil(1.1* user.MHP);
     enemy.CHP = Math.ceil(enemy.MHP);
@@ -71,7 +71,7 @@ else if(flags.stageNr == 10) {
 
     return enemy;
 }
-else if(flags.stageNr == 15) {
+else if(flags.stageNr == 16) {
     enemy.Name = "Minotaur";
     enemy.MHP = Math.ceil(1.3* user.MHP);
     enemy.CHP = Math.ceil(enemy.MHP);
@@ -81,7 +81,7 @@ else if(flags.stageNr == 15) {
 
     return enemy;
 }
-else if(flags.stageNr == 20) {
+else if(flags.stageNr == 21) {
     enemy.Name = "Dragon Gate Keeper";
     enemy.MHP = Math.ceil(1.5* user.MHP);
     enemy.CHP = Math.ceil(enemy.MHP);
@@ -91,7 +91,7 @@ else if(flags.stageNr == 20) {
 
     return enemy;
 }
-else if(flags.stageNr == 25) {
+else if(flags.stageNr == 26) {
     enemy.Name = "Dungeon Lord";
     enemy.MHP = Math.ceil(2.5* user.MHP);
     enemy.CHP = Math.ceil(enemy.MHP);
