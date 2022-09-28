@@ -119,7 +119,7 @@ function buttonDisplaChange(){
           option1() {
             buttonDisplaChange();
             let z = Math.random() *100;
-            if (z <= 10) {
+            if (z <= 80) {
               innterStoryText.innerHTML = `the apple was quite delicious \n Healed for ${x}`;
               user.CHP +=x;
               flags.deliciousApple = true;
@@ -137,6 +137,7 @@ function buttonDisplaChange(){
                 setTimeout(hideStorydiv,3000)
                 endGame();
               }
+              setTimeout(updateData, 3000)
 
 
             }
