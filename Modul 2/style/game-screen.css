@@ -39,7 +39,7 @@ body{
     }
 
 .next-level{
-  background-image: url(/images/warpG.png);
+  background-image: url("/images/warpG.png");
   background-repeat: no-repeat;
   background-size: cover;
     width: 70px;

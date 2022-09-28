@@ -17,7 +17,7 @@ body{
 
 .bg{
      height: 937px;  
-    background-image: url("/images/stars.png");
+    background-image: url("./images/stars.png");
     
     animation: eddie 100s linear infinite;
 }
