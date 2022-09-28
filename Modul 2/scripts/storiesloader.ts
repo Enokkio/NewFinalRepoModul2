@@ -137,6 +137,7 @@ function buttonDisplaChange(){
                 setTimeout(hideStorydiv,3000)
                 endGame();
               }
+              setTimeout(updateData, 3000)
 
 
             }

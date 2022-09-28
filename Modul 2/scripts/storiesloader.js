@@ -100,6 +100,7 @@ function loadcommonstory() {
                         setTimeout(hideStorydiv, 3000);
                         endGame();
                     }
+                    setTimeout(updateData, 3000);
                 }
             },
             option2() {
