@@ -23,7 +23,7 @@ body{
 }
 
 #wall{
-    background-image: inherit url(/images/ground_forest.png);
+    background-image: inherit url(./images/ground_forest.png);
 }
 
 #window{

@@ -24,7 +24,7 @@ class Enemy {
 //Forest enemies
 export var enemy = new Enemy("", "", 0, 0, 0, 0, 0, 0, 0);
 let ForestMobs = ["wolf", "forest Guy", "spider"];
-let ForestMobSprites = ["/images/mike.png", "/images/mike.png", "/images/mike.png"];
+let ForestMobSprites = ["./images/mike.png", "./images/mike.png", "./images/mike.png"];
 let CaveMobs = ["Black slime", "skeleton", "Rock golem"];
 let InnerCaveMobs = ["Rock elemental", "Ancient skeleton", "Draugr"];
 let DungeonMobs = ["Ghoul", "Orc", "Dark Elf"];
